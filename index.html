@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guía de Comandos - Windows & Linux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <label class="switch" style="position: absolute; top: 20px; right: 20px;">
+  <input type="checkbox" id="toggleMode">
+  <span class="slider">
+    <span class="icon">🌙</span>
+  </span>
+</label>
+    <div class="container">
+        <h1> Guía Rápida de Comandos</h1>
+        <p>Comandos útiles para terminal en <strong>Windows</strong> y <strong>Linux</strong>.</p>
+        <input type="text" id="busqueda" placeholder="🔍 Buscar comandos..." style="width: 100%; padding: 12px; margin: 20px 0; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+        <div class="tabs">
+            <button class="tablink" onclick="showTab('windows')">🪟 Windows</button>
+            <button class="tablink" onclick="showTab('linux')">🐧 Linux</button>
+            <button class="tablink" onclick="showTab('github')">🐙 GitHub</button>
+            <button class="tablink" onclick="showTab('macos')">🍎 macOS</button>
+            <button class="tablink" onclick="showTab('fortinet')">🛡️ Fortinet</button>
+        </div>
+
+        <div id="windows" class="tabcontent">
+            <h2>Windows</h2>
+            <ul>
+                <li><code>systeminfo</code> <button class="copy-btn" onclick="copiarComando('systeminfo')">📋</button> — Ver información del sistema</li>
+                <li><code>tasklist</code> <button class="copy-btn" onclick="copiarComando('tasklist')">📋</button> — Listar procesos activos</li>
+                <li><code>shutdown /s /t 0</code> <button class="copy-btn" onclick="copiarComando('shutdown /s /t 0')">📋</button> — Apagar el sistema inmediatamente</li>
+                <li><code>ping [ip]</code> <button class="copy-btn" onclick="copiarComando('ping [ip]')">📋</button> — Verificar conectividad con una IP</li>
+                <li><code>ipconfig /all</code> <button class="copy-btn" onclick="copiarComando('ipconfig /all')">📋</button> — Ver configuración IP completa</li>
+                <li><code>tracert [dominio]</code> <button class="copy-btn" onclick="copiarComando('tracert [dominio]')">📋</button> — Ver ruta hasta un destino</li>
+                <li><code>nslookup [dominio]</code> <button class="copy-btn" onclick="copiarComando('nslookup [dominio]')">📋</button> — Ver resolución DNS</li>
+                <li><code>net use</code> <button class="copy-btn" onclick="copiarComando('net use')">📋</button> — Ver conexiones de red</li>
+                <li><code>net user</code> <button class="copy-btn" onclick="copiarComando('net user')">📋</button> — Ver usuarios del sistema</li>
+                <li><code>net localgroup administrators</code> <button class="copy-btn" onclick="copiarComando('net localgroup administrators')">📋</button> — Ver administradores</li>
+            </ul>
+        </div>
+
+        <div id="linux" class="tabcontent" style="display:none">
+            <h2>Linux</h2>
+            <ul>
+                <li><code>uptime</code> <button class="copy-btn" onclick="copiarComando('uptime')">📋</button> — Ver tiempo encendido del sistema</li>
+                <li><code>free -h</code> <button class="copy-btn" onclick="copiarComando('free -h')">📋</button> — Ver memoria disponible</li>
+                <li><code>lsblk</code> <button class="copy-btn" onclick="copiarComando('lsblk')">📋</button> — Ver dispositivos de bloques</li>
+                <li><code>mount</code> <button class="copy-btn" onclick="copiarComando('mount')">📋</button> — Ver dispositivos montados</li>
+                <li><code>uname -a</code> <button class="copy-btn" onclick="copiarComando('uname -a')">📋</button> — Ver información del sistema</li>
+                <li><code>ps aux</code> <button class="copy-btn" onclick="copiarComando('ps aux')">📋</button> — Ver todos los procesos</li>
+                <li><code>whoami</code> <button class="copy-btn" onclick="copiarComando('whoami')">📋</button> — Mostrar usuario actual</li>
+                <li><code>chmod +x script.sh</code> <button class="copy-btn" onclick="copiarComando('chmod +x script.sh')">📋</button> — Dar permisos de ejecución</li>
+                <li><code>chown user:group archivo</code> <button class="copy-btn" onclick="copiarComando('chown user:group archivo')">📋</button> — Cambiar propietario y grupo</li>
+                <li><code>journalctl -xe</code> <button class="copy-btn" onclick="copiarComando('journalctl -xe')">📋</button> — Ver logs del sistema</li>
+                <li><code>ifconfig</code> <button class="copy-btn" onclick="copiarComando('ifconfig')">📋</button> — Ver configuración de red</li>
+                <li><code>df -h</code> <button class="copy-btn" onclick="copiarComando('df -h')">📋</button> — Ver espacio en disco</li>
+                <li><code>top</code> <button class="copy-btn" onclick="copiarComando('top')">📋</button> — Monitor de procesos</li>
+            </ul>
+        </div>
+
+        <div id="github" class="tabcontent" style="display:none">
+            <h2>GitHub</h2>
+            <ul>
+                <li><code>git clone URL</code> <button class="copy-btn" onclick="copiarComando('git clone URL')">📋</button> — Clonar un repositorio</li>
+                <li><code>git log</code> <button class="copy-btn" onclick="copiarComando('git log')">📋</button> — Ver historial de commits</li>
+                <li><code>git branch</code> <button class="copy-btn" onclick="copiarComando('git branch')">📋</button> — Ver ramas locales</li>
+                <li><code>git checkout -b nueva-rama</code> <button class="copy-btn" onclick="copiarComando('git checkout -b nueva-rama')">📋</button> — Crear y cambiar a nueva rama</li>
+                <li><code>git add .</code> <button class="copy-btn" onclick="copiarComando('git add .')">📋</button> — Agregar todos los archivos al staging</li>
+                <li><code>git commit -m &quot;mensaje&quot;</code> <button class="copy-btn" onclick='copiarComando("git commit -m \"mensaje\"")'>📋</button> — Crear un commit</li>
+                <li><code>git push origin main</code> <button class="copy-btn" onclick='copiarComando("git push origin main")'>📋</button> — Subir cambios al repositorio remoto</li>
+                <li><code>gh repo create</code> <button class="copy-btn" onclick="copiarComando('gh repo create')">📋</button> — Crear un repositorio nuevo</li>
+                <li><code>gh pr create</code> <button class="copy-btn" onclick="copiarComando('gh pr create')">📋</button> — Crear Pull Request</li>
+                <li><code>gh issue list</code> <button class="copy-btn" onclick="copiarComando('gh issue list')">📋</button> — Listar issues abiertas</li>
+                <li><code>git init</code> <button class="copy-btn" onclick="copiarComando('git init')">📋</button> — Inicializar repositorio</li>
+                <li><code>git status</code> <button class="copy-btn" onclick="copiarComando('git status')">📋</button> — Ver estado</li>
+                <li><code>gh auth login</code> <button class="copy-btn" onclick="copiarComando('gh auth login')">📋</button> — Iniciar sesión con GitHub CLI</li>
+            </ul>
+        </div>
+
+        <div id="macos" class="tabcontent" style="display:none">
+            <h2>macOS</h2>
+            <ul>
+                <li><code>defaults write com.apple.finder AppleShowAllFiles YES</code> <button class="copy-btn" onclick="copiarComando('defaults write com.apple.finder AppleShowAllFiles YES')">📋</button> — Mostrar archivos ocultos</li>
+                <li><code>killall Finder</code> <button class="copy-btn" onclick="copiarComando('killall Finder')">📋</button> — Reiniciar Finder</li>
+                <li><code>brew install nombre</code> <button class="copy-btn" onclick="copiarComando('brew install nombre')">📋</button> — Instalar app con Homebrew</li>
+                <li><code>top</code> <button class="copy-btn" onclick="copiarComando('top')">📋</button> — Ver procesos activos</li>
+                <li><code>df -h</code> <button class="copy-btn" onclick="copiarComando('df -h')">📋</button> — Ver uso del disco</li>
+                <li><code>say &quot;Hola mundo&quot;</code> <button class="copy-btn" onclick='copiarComando("say \"Hola mundo\"")'>📋</button> — Leer texto con voz</li>
+                <li><code>open .</code> <button class="copy-btn" onclick="copiarComando('open .')">📋</button> — Abrir carpeta actual en Finder</li>
+                <li><code>sw_vers</code> <button class="copy-btn" onclick="copiarComando('sw_vers')">📋</button> — Ver versión del sistema</li>
+            </ul>
+        </div>
+
+        <div id="fortinet" class="tabcontent" style="display:none">
+            <h2>Fortinet</h2>
+            <ul>
+                <li><code>config system global</code> <button class="copy-btn" onclick="copiarComando('config system global')">📋</button> — Entrar a configuración global</li>
+                <li><code>set admin-sport 444</code> <button class="copy-btn" onclick="copiarComando('set admin-sport 444')">📋</button> — Cambiar puerto del admin GUI</li>
+                <li><code>end</code> <button class="copy-btn" onclick="copiarComando('end')">📋</button> — Salir de modo configuración</li>
+                <li><code>show full-configuration</code> <button class="copy-btn" onclick="copiarComando('show full-configuration')">📋</button> — Ver configuración completa</li>
+                <li><code>diag debug config-error-log read</code> <button class="copy-btn" onclick="copiarComando('diag debug config-error-log read')">📋</button> — Leer errores de configuración</li>
+                <li><code>show</code> <button class="copy-btn" onclick="copiarComando('show')">📋</button> — Mostrar configuración actual</li>
+                <li><code>diagnose debug enable</code> <button class="copy-btn" onclick="copiarComando('diagnose debug enable')">📋</button> — Habilitar modo debug</li>
+                <li><code>execute backup config flash</code> <button class="copy-btn" onclick="copiarComando('execute backup config flash')">📋</button> — Hacer backup de la configuración</li>
+                <li><code>get system status</code> <button class="copy-btn" onclick="copiarComando('get system status')">📋</button> — Ver estado del sistema</li>
+            </ul>
+        </div>
+    </div>
+
+<script>
+function showTab(tab) {
+    document.querySelectorAll('.tabcontent').forEach(t => t.style.display = 'none');
+    document.getElementById(tab).style.display = 'block';
+}
+
+function copiarComando(texto) {
+    navigator.clipboard.writeText(texto).then(() => {
+        const noti = document.createElement('div');
+        noti.textContent = '✔️ Comando copiado';
+        noti.style.position = 'fixed';
+        noti.style.bottom = '20px';
+        noti.style.right = '20px';
+        noti.style.padding = '10px 20px';
+        noti.style.background = '#4caf50';
+        noti.style.color = 'white';
+        noti.style.borderRadius = '8px';
+        noti.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+        noti.style.fontWeight = 'bold';
+        document.body.appendChild(noti);
+        setTimeout(() => noti.remove(), 2000);
+    }).catch(err => console.error('Error al copiar: ', err));
+}
+const toggle = document.getElementById('toggleMode');
+const icon = document.querySelector('.slider .icon');
+
+if (localStorage.getItem('modo') === 'oscuro') {
+    document.body.classList.add('dark');
+    toggle.checked = true;
+    icon.textContent = '☀️';
+}
+
+toggle.addEventListener('change', function () {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    icon.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('modo', isDark ? 'oscuro' : 'claro');
+});
+</script>
+</body>
+</html>
